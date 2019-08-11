@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Play|Press+Start+2P&display=swap" rel="stylesheet">
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+        </script>
+        <style>
+            body {
+                width: 100%;
+                min-width: 20em;
+                height: 100%;
+                margin-right: 5em;
+                font-family: 'Play', sans-serif;
+                font-size: 14pt;
+                font-weight: 100;
+                text-align: center;
+            }
+
+            button {
+                height: 4em;
+                background: black;
+                border: 2px solid transparent;
+                border-radius: .5em;
+                width: 9em;
+                font-family: 'Press Start 2P', sans-serif;
+                color: white;
+            }
+
+            fieldset {
+                border: 1px solid transparent;
+            }
+
+            h1 {
+                margin: auto;
+                font-family: 'Press Start 2P';
+                background-color: black;
+                border: .5em solid black;
+                border-radius: .5em;
+                color: white;
+                width: 80%;
+            }
+
+            .form-area {
+                width: 80%;
+                margin: 2% auto;
+                padding: .5em;
+                background-color: rgb(235, 248, 255);
+                border: 1em double hsl(334deg, 94%, 52%);
+                border-radius: .5em;
+            }
+
+            .input-section {
+                margin: 1em;
+            }
+
+            .left-text {
+                display: inline-block;
+                width: 40%;
+                vertical-align: top;
+                text-align: right;
+                padding-right: 1em;
+                margin: .3em;
+            }
+
+            .right-form {
+                display: inline-block;
+                width: 50%;
+                text-align: left;
+            }
+
+            .input-area {
+                width: 100%;
+                height: 100%;
+                border: 2px solid lightgray;
+                border-radius: 5px;
+                padding: .5em;
+            }
+
+            .options {
+                height: 2.5em;
+                padding: .5em;
+                border: 2px solid lightgray;
+                border-radius: 5px;
+            }
+
+            .radio-button {
+                display: block;
+                margin: .2em  0 0 -1em;
+            }
+
+            .checkbox {
+                display: block;
+                margin: .2em 0 0 -1em; 
+            }
+
+            #comment {
+                height: 5em;
+            }
+
+            #description {
+                font-size: 18pt;
+            }
+        </style>
+    </header>
+    <body>
+        <h1 id="title">Game Preferences Survey</h1>
+        <p id="description">Tell us about your gaming preferences and what are the most important aspects of video games for you.</p>
+        <div class="form-area">
+            <form id="survey-form">
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="name" id="name-label">Name:</label>
+                    </div>
+                    <div class="right-form">
+                        <input class="input-area" id="name" type="text" placeholder="Enter your name" required>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="email" id="email-label">Email:</label>
+                    </div>
+                    <div class="right-form">
+                        <input class="input-area" id="email" type="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="number" id="number-label">Number of games played previously:</label>
+                    </div>
+                    <div class="right-form">
+                        <input class="input-area" id="number" type="number" placeholder="Number of games played" min="0" max="1000" required>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="dropdown">
+                            Which type of gamer do you consider yourself to be?
+                        </label>
+                    </div>
+                    <div class="right-form">
+                        <select class="options" id="dropdown" name="gamer-class">
+                            <option disabled value>Select a type:</option>
+                            <option value="casual">Casual</option>
+                            <option value="core">Core</option>
+                            <option value="hardcore">Hardcore</option>
+                            <option value="competitive">Competitive</option>
+                            <option value="completionist">Completionist</option>
+                            <option value="speed-runner">Speed Runner</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="radio-buttons">How much time do you spend gaming each day?</label>
+                    </div>
+                    <div class="right-form">
+                        <fieldset id="radio-buttons">
+                            <label class="radio-button" for="little"><input id="little" type="radio" name="game-time" value="little">Less than 1 hour</label>
+                            <label class="radio-button" for="few"><input id="few" type="radio" name="game-time" value="few">1 - 2 hours</label>
+                            <label class="radio-button" for="more"><input id="more" type="radio" name="game-time" value="more">3 -5 hours</label>
+                            <label class="radio-button" for="many"><input id="many" type="radio" name="game-time" value="many">5 - 8 hours</label>
+                            <label class="radio-button" for="most"><input id="most" type="radio" name="game-time" value="most">More than 8 hours</label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="checkboxes">Which of these gaming features are important to you? (Select all that apply)</label>
+                    </div>
+                    <div class="right-form">
+                        <fieldset id="checkboxes">
+                            <label class="checkbox" for="story"><input id="story" type="checkbox" name="features" value="story">Story</label>
+                            <label class="checkbox" for="music"><input id="music" type="checkbox" name="features" value="music">Music</label>
+                            <label class="checkbox" for="characters"><input id="characters" type="checkbox" name="features" value="characters">Characters</label>
+                            <label class="checkbox" for="gameplay"><input id="gameplay" type="checkbox" name="features" value="gameplay">Gameplay</label>
+                            <label class="checkbox" for="action"><input id="action" type="checkbox" name="features" value="action">Action</label>
+                            <label class="checkbox" for="rpg-elements"><input id="rpg-elements" type="checkbox" name="features" value="rpg-elements">RPG Elements</label>
+                            <label class="checkbox" for="length"><input id="length" type="checkbox" name="features" value="length">Completion Length</label>
+                            <label class="checkbox" for="long-challanges"><input id="long-challanges" type="checkbox" name="features" value="long-challenges">Long Challenges</label>
+                            <label class="checkbox" for="short-challenges"><input id="short-challenges" type="checkbox" name="features" value="short-challenges">Short Challenges</label>
+                            <label class="checkbox" for="customization"><input id="customization" type="checkbox" name="features" value="customization">Character Customization</label>
+                            <label class="checkbox" for="none"><input id="none" type="checkbox" name="features" value="none">None of the above</label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <div class="left-text">
+                        <label for="comment">Wanna tell us about your favarite game? or tell us about what draws you certain games? Then, leave a comment and tell us about it.</label>
+                        </div>
+                    <div class="right-form">
+                        <textarea id="comment" class="input-area" placeholder="Enter your comments here."></textarea>
+                    </div>
+                </div>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
